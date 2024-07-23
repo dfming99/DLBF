@@ -52,7 +52,7 @@ def compute_average_size(dataset):
     return sum/len(dataset)
 
 def Random_forest(x_train,x_label):
-    print(" 3.使用随机森林作为分类器进行训练")
+    print(" RF_classifier training...")
     clf = RandomForestClassifier(n_estimators=128,max_leaf_nodes=20, random_state=0)  #max_leaf_nodes
     clf.fit(x_train, x_label)
     train_answer = clf.predict_proba(x_train)
@@ -203,7 +203,7 @@ if __name__ == '__main__':
         #print('i is {}'.format(i))
         #print(thresholds)
     output_path = './result_4.txt'
-    #output_path = 'D:/xjtu/result.txt'
+    
     with open(output_path,'a',encoding = 'utf-8') as file1:
         print('min_false_p is {}, thresholds are {}, epsilon_i is {}'.format(min_false_p,thresholds,min_epsilon_i), file = file1)
     #print('optimal thresholds are:',thresholds)
